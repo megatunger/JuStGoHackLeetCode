@@ -5,13 +5,13 @@ import (
 )
 
 func bonAppetit(bill []int32, k int32, b int32) {
-	var sum = int64(0)
-	for _, element := range bill {
-		if bill[k] != element {
-			sum += int64(element)
+	var sum = int32(0)
+	for i, element := range bill {
+		if int32(i) != k {
+			sum += element
 		}
 	}
-	var fairDivide = int32(sum/2)
+	var fairDivide = sum/2
 	if b == fairDivide {
 		fmt.Println("Bon Appetit")
 	} else {
